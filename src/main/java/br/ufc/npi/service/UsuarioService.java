@@ -19,6 +19,12 @@ public class UsuarioService {
 		return usuario;
 	}
 	
+	public String removerUser(int id){
+		Usuario user = repo.findById(id);
+		repo.delete(user);
+		return "Usuario removido!";
+	}
+	
 	public List<Usuario> getTodosUsuarios(){
 		return repo.findAll();
 	}

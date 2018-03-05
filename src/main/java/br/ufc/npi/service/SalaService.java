@@ -18,6 +18,11 @@ public class SalaService {
 		repo.save(sala);
 		return sala;
 	}
+	public String removerSala(int id){
+		Sala sala = repo.findById(id);
+		repo.delete(sala);
+		return "Sala removida!";
+	}
 	
 	public List<Sala> getTodasSalas(){
 		return repo.findAll();

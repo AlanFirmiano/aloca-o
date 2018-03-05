@@ -11,4 +11,5 @@ import br.ufc.npi.bean.Sala;
 @Transactional
 public interface SalaRepository extends JpaRepository<Sala, Integer>{
 	Sala findBySalaAndBloco(String sala, String bloco);
+	Sala findById(int id);
 }

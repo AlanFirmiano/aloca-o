@@ -12,5 +12,5 @@ import br.ufc.npi.bean.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 	
 	Usuario findByMatricula(String matricula);
-	
+	Usuario findById(int id);
 }

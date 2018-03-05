@@ -28,8 +28,8 @@
 		<div class="row">
 
 
-
-			<table>
+			<h4>Usuários</h4>
+			<table class="highlight">
 				<thead>
 					<tr>
 						<th>Id</th>
@@ -40,11 +40,11 @@
 				</thead>
 
 				<tbody>
-					<tr th:each="user : ${usuarios}">
-						<td th:text="">Alvin</td>
-						<td th:text="">Eclair</td>
-						<td th:text="">$0.87</td>
-						<td><i class="material-icons">remove</i></td>
+					<tr th:each="usuario : ${usuarios}">
+						<td th:text="${usuario.id}"></td>
+						<td th:text="${usuario.matricula}"></td>
+						<td th:text="${usuario.nome}"></td>
+						<td><a class="btn" th:href="@{${'/usuarios/remover/'+usuario.id}}"><i class="material-icons">delete</i></a></td>
 					</tr>
 				</tbody>
 			</table>
@@ -54,35 +54,10 @@
 		
 	</div>
 	<div class="fixed-action-btn toolbar">
-			<a class="btn-floating btn-large waves-effect waves-light red pulse"><i
+			<a href="/usuarios/cadastrar" class="btn-floating btn-large waves-effect waves-light red pulse"><i
 				class="material-icons">add</i></a>
 		</div>
-	<footer class="page-footer #29b6f6 light-blue lighten-1">
-		<div class="container">
-			<div class="row">
-				<div class="col l6 s12">
-					<h5 class="white-text">UFC - Campus Quixadá</h5>
-					<p class="grey-text text-lighten-4">Projeto desenvolvido para
-						estudar Thymeleaf - NPI.</p>
-				</div>
-				<div class="col l4 offset-l2 s12">
-					<h5 class="white-text">Links</h5>
-					<ul>
-						<li><a class="grey-text text-lighten-3" href="#!">SIGAA</a></li>
-						<li><a class="grey-text text-lighten-3" href="#!">SIPPA</a></li>
-						<li><a class="grey-text text-lighten-3" href="#!">SISTEMAS</a></li>
-						<li><a class="grey-text text-lighten-3" href="#!">ESTÁGIO</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="footer-copyright">
-			<div class="container">
-				© 2018 Copyright NPI <a class="grey-text text-lighten-4 right"
-					href="#!">More Links</a>
-			</div>
-		</div>
-	</footer>
+	
 
 	<script src="/webjars/jquery/2.2.4/jquery.js"></script>
 	<script src="/webjars/materializecss/0.97.7/js/materialize.js"></script>

@@ -11,6 +11,7 @@ public class Usuario {
 	@GeneratedValue
 	private int id;
 	private String matricula;
+	private String nome;
 	
 	public Usuario(){
 		
@@ -32,5 +33,12 @@ public class Usuario {
 		this.matricula = matricula;
 	}
 
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 	
 }
