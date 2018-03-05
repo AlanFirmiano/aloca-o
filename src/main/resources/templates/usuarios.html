@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<link href="/webjars/materializecss/0.97.7/css/materialize.css"
+	type="text/css" rel="stylesheet" media="screen,projection" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+
+<title>Horário de Estudo</title>
+</head>
+
+<body>
+	<div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper #29b6f6 light-blue lighten-1">
+				<a href="/" class="brand-logo"><i class="material-icons">school</i>Alocação
+					de Horários</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="sass.html">Usuário</a></li>
+					<li><a href="badges.html">Sala</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<div class="container">
+		<div class="row">
+
+
+
+			<table>
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Matricula</th>
+						<th>Nome</th>
+						<th>Opções</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr th:each="user : ${usuarios}">
+						<td th:text="">Alvin</td>
+						<td th:text="">Eclair</td>
+						<td th:text="">$0.87</td>
+						<td><i class="material-icons">remove</i></td>
+					</tr>
+				</tbody>
+			</table>
+
+
+		</div>
+		
+	</div>
+	<div class="fixed-action-btn toolbar">
+			<a class="btn-floating btn-large waves-effect waves-light red pulse"><i
+				class="material-icons">add</i></a>
+		</div>
+	<footer class="page-footer #29b6f6 light-blue lighten-1">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">UFC - Campus Quixadá</h5>
+					<p class="grey-text text-lighten-4">Projeto desenvolvido para
+						estudar Thymeleaf - NPI.</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text">Links</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="#!">SIGAA</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">SIPPA</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">SISTEMAS</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">ESTÁGIO</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				© 2018 Copyright NPI <a class="grey-text text-lighten-4 right"
+					href="#!">More Links</a>
+			</div>
+		</div>
+	</footer>
+
+	<script src="/webjars/jquery/2.2.4/jquery.js"></script>
+	<script src="/webjars/materializecss/0.97.7/js/materialize.js"></script>
+</body>
+
+</html>
