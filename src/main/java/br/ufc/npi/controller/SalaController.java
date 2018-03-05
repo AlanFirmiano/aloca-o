@@ -36,6 +36,11 @@ public class SalaController {
 		return "cadastroSala";
 	}
 	
+	@RequestMapping(path="/horarios")
+	public String HorariosSala(){
+		return "horariosSala";
+	}
+	
 	@RequestMapping(path="/cadastrar/salvar", method=RequestMethod.POST)
 	public String salvarSala(@RequestParam String nomeSala, String blocoSala){
 		Sala sala = new Sala();
