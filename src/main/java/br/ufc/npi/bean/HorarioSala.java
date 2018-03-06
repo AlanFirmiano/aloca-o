@@ -20,6 +20,8 @@ public class HorarioSala {
 	@OneToOne
 	private Sala sala;
 	
+	private String atividade;
+	
 	public HorarioSala(){
 		
 	}
@@ -54,6 +56,14 @@ public class HorarioSala {
 
 	public void setSala(Sala sala) {
 		this.sala = sala;
+	}
+
+	public String getAtividade() {
+		return atividade;
+	}
+
+	public void setAtividade(String atividade) {
+		this.atividade = atividade;
 	}
 	
 }

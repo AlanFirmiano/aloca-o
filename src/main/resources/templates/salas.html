@@ -24,8 +24,9 @@
 			</div>
 		</nav>
 	</div>
-	
+
 	<div class="container">
+	
 		<div class="row">
 
 			<h4>Salas</h4>
@@ -44,22 +45,22 @@
 						<td th:text="${sala.id}"></td>
 						<td th:text="${sala.sala}"></td>
 						<td th:text="${sala.bloco}"></td>
-						<td>
-						<a class="btn-floating waves-effect waves-light" th:href="@{${'/salas/remover/'+sala.id}}"><i class="material-icons">delete</i></a>
-						<a class="btn" href="/salas/horarios/">Horários</a>
-						</td>
+						<td><a class="btn-floating waves-effect waves-light"
+							th:href="@{${'/salas/remover/'+sala.id}}"><i
+								class="material-icons">delete</i></a> <a class="btn"
+							href="/salas/horarios/">Horários</a></td>
 					</tr>
 				</tbody>
 			</table>
 
-		</div>		
-	</div>
-	
-	<div class="fixed-action-btn toolbar">
-			<a href="/salas/cadastrar" class="btn-floating btn-large waves-effect waves-light red pulse"><i
-				class="material-icons">add</i></a>
 		</div>
-	
+	</div>
+
+	<div class="fixed-action-btn toolbar">
+		<a href="/salas/cadastrar"
+			class="btn-floating btn-large waves-effect waves-light red pulse"><i
+			class="material-icons">add</i></a>
+	</div>
 
 	<script src="/webjars/jquery/2.2.4/jquery.js"></script>
 	<script src="/webjars/materializecss/0.97.7/js/materialize.js"></script>

@@ -27,10 +27,97 @@
 
 	<div class="container">
 		<div class="row">
-			<h1>Horarios</h1>
+			<form action="/horarios/salvar" method="post">
+				<div class="input-field col s4">
+					<input placeholder="João" id="nome" name="nomeUsuario" type="text"
+						class="validate" /> <label for="nome">Nome</label>
+				</div>
+				<div class="input-field col s4">
+					<input placeholder="João" id="nome" name="nomeUsuario" type="text"
+						class="validate" /> <label for="nome">Nome</label>
+				</div>
+				<div class="input-field col s4">
+					<input placeholder="João" id="nome" name="nomeUsuario" type="text"
+						class="validate" /> <label for="nome">Nome</label>
+				</div>
+				<div>
+					<button class="btn waves-effect waves-light" type="submit"
+						name="action">Adicionar</button>
+				</div>
+			</form>
+		</div>
+		<div class="row">
+			<h4>Horarios</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>TURNOS</th>
+						<th>SEG</th>
+						<th>TER</th>
+						<th>QUA</th>
+						<th>QUI</th>
+						<th>SEX</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>08:00 - 10:00</td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+					</tr>
+					<tr>
+						<td>10:00 - 12:00</td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+					</tr>
+
+					<tr>
+						<td>13:30 - 15:30</td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+					</tr>
+					<tr>
+						<td>15:30 - 17:30</td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+					</tr>
+
+					<tr>
+						<td>18:00 - 20:00</td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+					</tr>
+					<tr>
+						<td>20:00 - 22:00</td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+						<td><button class="btn">LIVRE</button></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
-	
+	<script src="/webjars/jquery/2.2.4/jquery.js"></script>
+	<script src="/webjars/materializecss/0.97.7/js/materialize.js"></script>
+
 </body>
 
 </html>
