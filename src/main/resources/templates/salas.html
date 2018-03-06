@@ -47,8 +47,9 @@
 						<td th:text="${sala.bloco}"></td>
 						<td><a class="btn-floating waves-effect waves-light"
 							th:href="@{${'/salas/remover/'+sala.id}}"><i
-								class="material-icons">delete</i></a> <a class="btn"
-							href="/salas/horarios/">Horários</a></td>
+								class="material-icons">delete</i></a> 
+								<a class="btn"
+							th:href="@{${'/salas/horarios/'+sala.id}}">Horários</a></td>
 					</tr>
 				</tbody>
 			</table>

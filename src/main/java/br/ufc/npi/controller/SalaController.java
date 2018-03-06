@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.ufc.npi.bean.HorarioSala;
 import br.ufc.npi.bean.Sala;
 import br.ufc.npi.bean.Usuario;
+import br.ufc.npi.service.HorarioSalaService;
 import br.ufc.npi.service.SalaService;
 import br.ufc.npi.service.UsuarioService;
 
@@ -21,7 +23,7 @@ import br.ufc.npi.service.UsuarioService;
 public class SalaController {
 	@Autowired
 	SalaService service;
-	
+	HorarioSalaService hservice;
 	@RequestMapping(path="/")
 	public ModelAndView index(){
 		
@@ -36,9 +38,16 @@ public class SalaController {
 		return "cadastroSala";
 	}
 	
-	@RequestMapping(path="/horarios")
-	public String HorariosSala(){
-		return "horariosSala";
+	@RequestMapping(path="/horarios/{id}")
+	public ModelAndView HorariosSala(@PathVariable("id") int id){
+		
+		ModelAndView model = new ModelAndView("horariosSala");
+		Sala sala = service.getSala(id);
+		//List<HorarioSala> horaSala = hservice.getTodosHorarioPorSala(sala);
+		
+		//model.addObject("horaSala",horaSala);
+		model.addObject("sala", sala);
+		return model;
 	}
 	
 	@RequestMapping(path="/cadastrar/salvar", method=RequestMethod.POST)

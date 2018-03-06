@@ -44,7 +44,7 @@
 						<td th:text="${usuario.id}"></td>
 						<td th:text="${usuario.matricula}"></td>
 						<td th:text="${usuario.nome}"></td>
-						<td><a class="btn"
+						<td><a class="btn" onclick="Materialize.toast('Usuário removido!', 4000)"
 							th:href="@{${'/usuarios/remover/'+usuario.id}}"><i
 								class="material-icons">delete</i></a></td>
 					</tr>
@@ -64,6 +64,13 @@
 
 	<script src="/webjars/jquery/2.2.4/jquery.js"></script>
 	<script src="/webjars/materializecss/0.97.7/js/materialize.js"></script>
+	
+	<script>
+
+	  $(document).ready(function(){
+	    $('.tooltipped').tooltip({delay: 50});
+	  });
+	</script>
 </body>
 
 </html>

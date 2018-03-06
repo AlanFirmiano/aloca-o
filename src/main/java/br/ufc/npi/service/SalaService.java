@@ -24,6 +24,11 @@ public class SalaService {
 		return "Sala removida!";
 	}
 	
+	public Sala getSala(int id){
+		return repo.findById(id);
+	}
+	
+	
 	public List<Sala> getTodasSalas(){
 		return repo.findAll();
 	}
