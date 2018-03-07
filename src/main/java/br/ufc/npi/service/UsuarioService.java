@@ -28,4 +28,8 @@ public class UsuarioService {
 	public List<Usuario> getTodosUsuarios(){
 		return repo.findAll();
 	}
+	
+	public Usuario getUsuario(int id){
+		return repo.findById(id);
+	}
 }

@@ -16,7 +16,8 @@ public class HorarioSalaService {
 	HorarioSalaRepository repo;
 	@Autowired
 	SalaRepository srepo;
-	public HorarioSala salvarSala(HorarioSala horarioSala){
+	
+	public HorarioSala salvarHorarioSala(HorarioSala horarioSala){
 		repo.save(horarioSala);
 		return horarioSala;
 	}

@@ -17,6 +17,7 @@ public interface HorarioSalaRepository extends JpaRepository<HorarioSala, Intege
 	
 	List<HorarioSala> findBySala(Sala sala);
 	List<HorarioSala> findByUser(Usuario user);
-	HorarioSala findByHorarioTurnoAndHorarioOpcao(String turno,String opcao);
+	HorarioSala findBySalaAndHorarioDiaAndHorarioTurno(Sala sala, int dia, int turno);
+	List<HorarioSala> findBySalaAndHorarioTurno(Sala sala, int turno);
 	
 }

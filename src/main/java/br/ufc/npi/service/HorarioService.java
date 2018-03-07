@@ -13,7 +13,7 @@ public class HorarioService {
 	@Autowired
 	HorarioRepository repo;
 	
-	public Horario salvarSala(Horario horario){
+	public Horario salvarHorario(Horario horario){
 		repo.save(horario);
 		return horario;
 	}

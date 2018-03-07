@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.ufc.npi.bean.Horario;
 import br.ufc.npi.bean.HorarioSala;
 import br.ufc.npi.bean.Sala;
 import br.ufc.npi.bean.Usuario;
 import br.ufc.npi.service.HorarioSalaService;
+import br.ufc.npi.service.HorarioService;
 import br.ufc.npi.service.SalaService;
 import br.ufc.npi.service.UsuarioService;
 
@@ -23,7 +25,13 @@ import br.ufc.npi.service.UsuarioService;
 public class SalaController {
 	@Autowired
 	SalaService service;
+	@Autowired
+	UsuarioService uservice;
+	@Autowired
 	HorarioSalaService hservice;
+	@Autowired
+	HorarioService horaService;
+	
 	@RequestMapping(path="/")
 	public ModelAndView index(){
 		
@@ -43,11 +51,31 @@ public class SalaController {
 		
 		ModelAndView model = new ModelAndView("horariosSala");
 		Sala sala = service.getSala(id);
-		//List<HorarioSala> horaSala = hservice.getTodosHorarioPorSala(sala);
+		List<Usuario> usuarios = uservice.getTodosUsuarios();
 		
-		//model.addObject("horaSala",horaSala);
+		model.addObject("usuarios",usuarios);
 		model.addObject("sala", sala);
 		return model;
+	}
+	
+	@RequestMapping(path="/horarios/{id}/salvar", method=RequestMethod.POST)
+	public String salvarHorarioSala(@PathVariable ("id") int id,
+			@RequestParam String nomeUsuario,
+			 String diaHorario, String turnoHorario){
+		
+		Horario hora = new Horario();
+		hora.setDia(Integer.parseInt(diaHorario));
+		hora.setTurno(Integer.parseInt(turnoHorario));
+		Horario aux = horaService.salvarHorario(hora);
+		
+		HorarioSala hSala = new HorarioSala();
+		hSala.setHorario(aux);
+		hSala.setUser(uservice.getUsuario(Integer.parseInt(nomeUsuario)));
+		hSala.setSala(service.getSala(id));
+	
+		hservice.salvarHorarioSala(hSala);
+		
+		return "redirect:/salas/";
 	}
 	
 	@RequestMapping(path="/cadastrar/salvar", method=RequestMethod.POST)

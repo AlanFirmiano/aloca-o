@@ -10,9 +10,9 @@ public class Horario {
 	@Id
 	@GeneratedValue
 	private int id;
-	private String dia;
-	private String turno;
-	private String opcao;
+	private int dia;
+	private int turno;
+	
 	
 	public Horario(){
 		
@@ -26,27 +26,20 @@ public class Horario {
 		this.id = id;
 	}
 
-	public String getDia() {
+	public int getDia() {
 		return dia;
 	}
 
-	public void setDia(String dia) {
+	public void setDia(int dia) {
 		this.dia = dia;
 	}
 
-	public String getTurno() {
+	public int getTurno() {
 		return turno;
 	}
 
-	public void setTurno(String turno) {
+	public void setTurno(int turno) {
 		this.turno = turno;
 	}
-
-	public String getOpcao() {
-		return opcao;
-	}
-
-	public void setOpcao(String opcao) {
-		this.opcao = opcao;
-	}
+	
 }

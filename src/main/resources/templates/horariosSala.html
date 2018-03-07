@@ -18,8 +18,8 @@
 				<a href="/" class="brand-logo"><i class="material-icons">school</i>Alocação
 					de Horários</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="sass.html">Usuário</a></li>
-					<li><a href="badges.html">Sala</a></li>
+					<li><a href="/usuarios/">Usuário</a></li>
+					<li><a href="/salas/">Sala</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -28,31 +28,52 @@
 	<div class="container">
 		<div class="row">
 			<h4>
-			<span th:text="${sala.sala}"></span> - 
-			<span th:text="${sala.bloco}"></span>
+				<span th:text="${sala.sala}"></span> - <span th:text="${sala.bloco}"></span>
 			</h4>
-			<form action="/horarios/salvar" method="post">
-				<div class="input-field col s4">
-					<input placeholder="João" id="nome" name="nomeUsuario" type="text"
-						class="validate" /> <label for="nome">Nome</label>
+			<form th:action="@{${'/salas/horarios/'+sala.id+'/salvar'}}" method="post">
+				<div class="col s4">
+					<label>Escolha um usuario</label> <select class="browser-default"
+						name="nomeUsuario">
+						<option value="" disabled="disabled" selected="selected">Escolha
+							um usuario</option>
+						<option th:each="nomeUsuario : ${usuarios}"
+							th:value="${nomeUsuario.id}" th:text="${nomeUsuario.nome}"></option>
+					</select>
 				</div>
-				<div class="input-field col s4">
-					<input placeholder="João" id="nome" name="nomeUsuario" type="text"
-						class="validate" /> <label for="nome">Nome</label>
+				<div class="col s3">
+					<label>Escolha um dia</label> <select class="browser-default"
+						name="diaHorario">
+						<option value="" disabled="disabled" selected="selected">Escolha
+							um dia</option>
+						<option value="1">SEGUNDA</option>
+						<option value="2">TERÇA</option>
+						<option value="3">QUARTA</option>
+						<option value="4">QUINTA</option>
+						<option value="5">SEXTA</option>
+					</select>
 				</div>
-				<div class="input-field col s4">
-					<input placeholder="João" id="nome" name="nomeUsuario" type="text"
-						class="validate" /> <label for="nome">Nome</label>
+				<div class="col s3">
+					<label>Escolha um turno</label> <select class="browser-default"
+						name="turnoHorario">
+						<option value="" disabled="disabled" selected="selected">Escolha
+							um turno</option>
+						<option value="1">08:00 - 10:00</option>
+						<option value="2">10:00 - 12:00</option>
+						<option value="3">13:30 - 15:30</option>
+						<option value="4">15:30 - 17:30</option>
+						<option value="5">18:00 - 20:00</option>
+						<option value="6">20:00 - 22:00</option>
+					</select>
 				</div>
-				<div>
-					<button class="btn waves-effect waves-light" type="submit"
-						name="action">Adicionar</button>
+				<div class="col s2">
+					<button class="btn-floating valign-wrapper waves-effect waves-light orange pulse" type="submit"
+						name="action"><i class="material-icons">add</i></button>
 				</div>
 			</form>
 		</div>
 		<div class="row">
 			<h4>Horarios</h4>
-			<table>
+			<table class="striped">
 				<thead>
 					<tr>
 						<th>TURNOS</th>
