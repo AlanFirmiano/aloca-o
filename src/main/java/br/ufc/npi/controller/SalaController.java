@@ -147,7 +147,7 @@ public class SalaController {
 	
 		hservice.salvarHorarioSala(hSala);
 		
-		return "redirect:/salas/";
+		return "redirect:/salas/horarios/"+hSala.getSala().getId();
 	}
 	
 	@RequestMapping(path="/cadastrar/salvar", method=RequestMethod.POST)
