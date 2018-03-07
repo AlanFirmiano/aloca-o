@@ -21,4 +21,5 @@ public class HorarioService {
 	public List<Horario> getTodosHorarios(){
 		return repo.findAll();
 	}
+	
 }

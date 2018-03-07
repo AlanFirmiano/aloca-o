@@ -53,6 +53,78 @@ public class SalaController {
 		Sala sala = service.getSala(id);
 		List<Usuario> usuarios = uservice.getTodosUsuarios();
 		
+		HorarioSala d1t1 = hservice.getPorHorario(sala, 1, 1);
+		HorarioSala d2t1 = hservice.getPorHorario(sala, 2, 1);
+		HorarioSala d3t1 = hservice.getPorHorario(sala, 3, 1);
+		HorarioSala d4t1 = hservice.getPorHorario(sala, 4, 1);
+		HorarioSala d5t1 = hservice.getPorHorario(sala, 5, 1);
+		
+		HorarioSala d1t2 = hservice.getPorHorario(sala, 1, 2);
+		HorarioSala d2t2 = hservice.getPorHorario(sala, 2, 2);
+		HorarioSala d3t2 = hservice.getPorHorario(sala, 3, 2);
+		HorarioSala d4t2 = hservice.getPorHorario(sala, 4, 2);
+		HorarioSala d5t2 = hservice.getPorHorario(sala, 5, 2);
+		
+		HorarioSala d1t3 = hservice.getPorHorario(sala, 1, 3);
+		HorarioSala d2t3 = hservice.getPorHorario(sala, 2, 3);
+		HorarioSala d3t3 = hservice.getPorHorario(sala, 3, 3);
+		HorarioSala d4t3 = hservice.getPorHorario(sala, 4, 3);
+		HorarioSala d5t3 = hservice.getPorHorario(sala, 5, 3);
+		
+		HorarioSala d1t4 = hservice.getPorHorario(sala, 1, 4);
+		HorarioSala d2t4 = hservice.getPorHorario(sala, 2, 4);
+		HorarioSala d3t4 = hservice.getPorHorario(sala, 3, 4);
+		HorarioSala d4t4 = hservice.getPorHorario(sala, 4, 4);
+		HorarioSala d5t4 = hservice.getPorHorario(sala, 5, 4);
+		
+		HorarioSala d1t5 = hservice.getPorHorario(sala, 1, 5);
+		HorarioSala d2t5 = hservice.getPorHorario(sala, 2, 5);
+		HorarioSala d3t5 = hservice.getPorHorario(sala, 3, 5);
+		HorarioSala d4t5 = hservice.getPorHorario(sala, 4, 5);
+		HorarioSala d5t5 = hservice.getPorHorario(sala, 5, 5);
+	
+		HorarioSala d1t6 = hservice.getPorHorario(sala, 1, 6);
+		HorarioSala d2t6 = hservice.getPorHorario(sala, 2, 6);
+		HorarioSala d3t6 = hservice.getPorHorario(sala, 3, 6);
+		HorarioSala d4t6 = hservice.getPorHorario(sala, 4, 6);
+		HorarioSala d5t6 = hservice.getPorHorario(sala, 5, 6);
+		
+		model.addObject("d1t1",d1t1);
+		model.addObject("d2t1",d2t1);
+		model.addObject("d3t1",d3t1);
+		model.addObject("d4t1",d4t1);
+		model.addObject("d5t1",d5t1);
+		
+		model.addObject("d1t2",d1t2);
+		model.addObject("d2t2",d2t2);
+		model.addObject("d3t2",d3t2);
+		model.addObject("d4t2",d4t2);
+		model.addObject("d5t2",d5t2);
+		
+		model.addObject("d1t3",d1t3);
+		model.addObject("d2t3",d2t3);
+		model.addObject("d3t3",d3t3);
+		model.addObject("d4t3",d4t3);
+		model.addObject("d5t3",d5t3);
+		
+		model.addObject("d1t4",d1t4);
+		model.addObject("d2t4",d2t4);
+		model.addObject("d3t4",d3t4);
+		model.addObject("d4t4",d4t4);
+		model.addObject("d5t4",d5t4);
+		
+		model.addObject("d1t5",d1t5);
+		model.addObject("d2t5",d2t5);
+		model.addObject("d3t5",d3t5);
+		model.addObject("d4t5",d4t5);
+		model.addObject("d5t5",d5t5);
+		
+		model.addObject("d1t6",d1t6);
+		model.addObject("d2t6",d2t6);
+		model.addObject("d3t6",d3t6);
+		model.addObject("d4t6",d4t6);
+		model.addObject("d5t6",d5t6);
+		
 		model.addObject("usuarios",usuarios);
 		model.addObject("sala", sala);
 		return model;

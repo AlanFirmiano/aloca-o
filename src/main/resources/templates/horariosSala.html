@@ -30,7 +30,8 @@
 			<h4>
 				<span th:text="${sala.sala}"></span> - <span th:text="${sala.bloco}"></span>
 			</h4>
-			<form th:action="@{${'/salas/horarios/'+sala.id+'/salvar'}}" method="post">
+			<form th:action="@{${'/salas/horarios/'+sala.id+'/salvar'}}"
+				method="post">
 				<div class="col s4">
 					<label>Escolha um usuario</label> <select class="browser-default"
 						name="nomeUsuario">
@@ -66,8 +67,11 @@
 					</select>
 				</div>
 				<div class="col s2">
-					<button class="btn-floating valign-wrapper waves-effect waves-light orange pulse" type="submit"
-						name="action"><i class="material-icons">add</i></button>
+					<button
+						class="btn-floating valign-wrapper waves-effect waves-light orange pulse"
+						type="submit" name="action">
+						<i class="material-icons">add</i>
+					</button>
 				</div>
 			</form>
 		</div>
@@ -86,55 +90,57 @@
 				</thead>
 
 				<tbody>
+
 					<tr>
 						<td>08:00 - 10:00</td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
+						<td th:text="${d1t1.user.nome}"></td>
+						<td th:text="${d2t1.user.nome}"></td>
+						<td th:text="${d3t1.user.nome}"></td>
+						<td th:text="${d4t1.user.nome}"></td>
+						<td th:text="${d5t1.user.nome}"></td>
 					</tr>
+
 					<tr>
 						<td>10:00 - 12:00</td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
+						<td th:text="${d1t2.user.nome}"></td>
+						<td th:text="${d2t2.user.nome}"></td>
+						<td th:text="${d3t2.user.nome}"></td>
+						<td th:text="${d4t2.user.nome}"></td>
+						<td th:text="${d5t2.user.nome}"></td>
 					</tr>
-
 					<tr>
 						<td>13:30 - 15:30</td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-					</tr>
-					<tr>
-						<td>15:30 - 17:30</td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
+						<td th:text="${d1t3.user.nome}"></td>
+						<td th:text="${d2t3.user.nome}"></td>
+						<td th:text="${d3t3.user.nome}"></td>
+						<td th:text="${d4t3.user.nome}"></td>
+						<td th:text="${d5t3.user.nome}"></td>
 					</tr>
 
 					<tr>
-						<td>18:00 - 20:00</td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
+						<td>15:30 - 17:30</td>
+						<td th:text="${d1t4.user.nome}"></td>
+						<td th:text="${d2t4.user.nome}"></td>
+						<td th:text="${d3t4.user.nome}"></td>
+						<td th:text="${d4t4.user.nome}"></td>
+						<td th:text="${d5t4.user.nome}"></td>
 					</tr>
 					<tr>
+						<td>18:00 - 20:00</td>
+						<td th:text="${d1t5.user.nome}"></td>
+						<td th:text="${d2t5.user.nome}"></td>
+						<td th:text="${d3t5.user.nome}"></td>
+						<td th:text="${d4t5.user.nome}"></td>
+						<td th:text="${d5t5.user.nome}"></td>
+					</tr>
+
+					<tr>
 						<td>20:00 - 22:00</td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
-						<td><button class="btn">LIVRE</button></td>
+						<td th:text="${d1t6.user.nome}"></td>
+						<td th:text="${d2t6.user.nome}"></td>
+						<td th:text="${d3t6.user.nome}"></td>
+						<td th:text="${d4t6.user.nome}"></td>
+						<td th:text="${d5t6.user.nome}"></td>
 					</tr>
 				</tbody>
 			</table>
